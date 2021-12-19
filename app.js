@@ -1,5 +1,3 @@
-const hike = document.querySelector('.hike');
-
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-bar');
 
@@ -8,18 +6,11 @@ burger.addEventListener('click', () => {
   nav.classList.toggle('active');
 });
 
-// let = options = {
-//   threshold: 0.9,
-// };
-// const slideAnim = (entries) => {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       hike.style.background = 'pink';
-//     }
-//   });
-// };
+function animateSlides() {
+  controller = new ScrollMagic.Controller();
 
-// let observer = new IntersectionObserver(slideAnim, options);
-// observer.observe(hike);
+  //select items
 
-
+  const sliders = document.querySelectorAll('.slide');
+  const nav = document.querySelector('.nav-header');
+}

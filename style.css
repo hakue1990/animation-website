@@ -14,10 +14,13 @@ body {
 #logo {
   color: white;
   font-family: 'Abril Fatface';
+  z-index: 3;
+  cursor: pointer;
 }
 #logoH {
   color: rgb(167, 110, 231);
 }
+
 .nav-header {
   min-height: 10vh;
   font-size: 1rem;
@@ -158,8 +161,8 @@ body {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  /* clip-path: circle(50px at 100% -10%);
-  -webkit-clip-path: circle(50px at 100% -10%); */
+  clip-path: circle(50px at 100% -10%);
+  -webkit-clip-path: circle(50px at 100% -10%);
   transition: all 0.2s ease;
   z-index: 2;
 }
