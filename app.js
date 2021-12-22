@@ -71,10 +71,16 @@ function cursorMove(e) {
 }
 function activeCursor(e) {
   const item = e.target;
+  console.log(item);
   if (item.id === 'logo' || item.classList.contains('burger')) {
     cursor.classList.add('nav-active');
   } else {
     cursor.classList.remove('nav-active');
+  }
+  if (item.classList.contains('explore')) {
+    cursor.classList.add('explore-active');
+  } else {
+    cursor.classList.remove('explore-active');
   }
 }
 window.addEventListener('mousemove', cursorMove);
