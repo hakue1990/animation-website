@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
 *,
 *::before,
 *::after {
@@ -8,28 +8,33 @@
   /* cursor: none; */
 }
 body {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   background: #17181a;
   overflow-x: hidden;
 }
 
 #logo {
   color: white;
-  font-family: "Abril Fatface";
+  font-family: 'Abril Fatface';
   cursor: pointer;
+  z-index: 2;
 }
 
 .nav-header {
   min-height: 10vh;
   font-size: 1rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  color: white;
   width: 80%;
-  margin: 0 auto;
+  margin: auto;
+  padding: 2rem 0rem;
+  z-index: 2;
+  position: relative;
 }
+
 .burger {
-  display: block;
   width: 3rem;
   height: 3rem;
   background: transparent;
@@ -37,6 +42,7 @@ body {
   cursor: pointer;
   position: fixed;
   right: 4rem;
+  z-index: 124;
 }
 .burger-outer {
   display: block;
@@ -46,32 +52,34 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: 2;
 }
 .burger-inner {
   height: 4px;
   width: 100%;
   background-color: white;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.8s ease, background 0.3s ease;
+  z-index: 3;
 }
 .burger-inner::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   height: 4px;
   width: 100%;
   background-color: white;
   transform: translateY(-9px);
-  transition: transform 0.3s ease;
+  transition: transform 0.8s ease, background 0.8s ease;
 }
 .burger-inner::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   height: 4px;
   width: 100%;
   background-color: white;
   transform: translateY(9px);
-  transition: transform 0.3s ease;
+  transition: transform 1s ease, background 0.8s ease;
 }
 
 .active.burger-inner {
@@ -80,6 +88,7 @@ body {
 .active.burger-inner::after {
   transform: rotate(45deg);
   background-color: black;
+  pointer-events: none;
 }
 .active.burger-inner::before {
   transform: rotate(-45deg);
@@ -97,6 +106,7 @@ body {
   background: #17181a;
   margin-top: 1rem;
 }
+
 .hero-desc {
   display: flex;
   flex-direction: column;
@@ -111,13 +121,16 @@ body {
   position: relative;
   flex: 1;
   flex-basis: 25rem;
+  height: 500px;
   overflow: hidden;
 }
+
 .hero-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
+
 .about-span {
   color: rgb(86, 124, 228);
 }
@@ -129,7 +142,7 @@ body {
 }
 
 .hero-desc h2 {
-  font-family: "Abril Fatface";
+  font-family: 'Abril Fatface';
   font-size: 5rem;
 }
 .hero-desc p {
@@ -160,10 +173,10 @@ body {
   clip-path: circle(50px at 100% -10%);
   -webkit-clip-path: circle(50px at 100% -10%);
   transition: all 0.2s ease;
-}
-.nav-bar.active {
+  z-index: 1;
   opacity: 1;
 }
+
 .nav-links {
   font-size: 4rem;
   flex-basis: 30rem;
@@ -222,4 +235,7 @@ body {
 .cursor.explore-active {
   background: rgba(126, 120, 210, 0.3);
   transform: scale(3);
+}
+body.hide {
+  overflow: hidden;
 }
